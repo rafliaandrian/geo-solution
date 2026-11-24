@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geo Solution | Produk & Jasa Geospasial Profesional</title>
+  <meta name="description" content="Geo Solution oleh PT GS: papan QR peta, peta interaktif, pemetaan, analisis spasial, dan Web GIS.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- Navbar dibuat otomatis oleh main.js -->
+  <div id="navbar-slot"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <span class="badge"><i class="fa-solid fa-gem"></i> Geospatial Business &amp; Technology</span>
+          <h1>Wujudkan Lokasi Anda Menjadi <em>Pengalaman Digital</em></h1>
+          <p>Papan informasi ber-QR Code, peta interaktif, pemetaan, dan analisis spasial untuk desa wisata, kampus, dan pengelola kawasan.</p>
+          <div class="hero-actions">
+            <a href="#sektor" class="btn btn-gold">Lihat Sektor Layanan <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#tentang" class="btn btn-outline">Tentang Kami</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="map-card float">
+            <div class="map-card-head">
+              <span></span><span></span><span></span>
+              <small>geosolution.id/peta</small>
+            </div>
+            <div class="map-card-body">
+              <i class="fa-solid fa-location-dot p1"></i>
+              <i class="fa-solid fa-location-dot p2"></i>
+              <i class="fa-solid fa-location-dot p3"></i>
+            </div>
+          </div>
+          <div class="qr-card float-slow">
+            <i class="fa-solid fa-qrcode"></i>
+            <small>Scan untuk peta</small>
+          </div>
+          <div class="chip float"><i class="fa-solid fa-circle-check"></i> Peta aktif 24 jam</div>
+        </div>
+      </div>
+      <a href="#statistik" class="scroll-down" aria-label="Gulir ke bawah"><i class="fa-solid fa-chevron-down"></i></a>
+    </section>
+
+    <!-- STATISTIK (angka diisi otomatis dari data/produk.js) -->
+    <section class="stats" id="statistik">
+      <div class="container stats-grid">
+        <div class="stat reveal"><strong id="statSektor" data-count="4">0</strong><span>Sektor layanan</span></div>
+        <div class="stat reveal"><strong id="statProduk" data-count="10">0</strong><span>Produk &amp; jasa</span></div>
+        <div class="stat reveal"><strong data-count="100" data-suffix="%">0</strong><span>Data dari lapangan</span></div>
+        <div class="stat reveal"><strong data-count="24" data-suffix="/7">0</strong><span>Peta bisa diakses</span></div>
+      </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section class="section" id="tentang">
+      <div class="container about">
+        <div class="about-text reveal">
+          <span class="eyebrow">Tentang Kami</span>
+          <h2>Geo Solution, Mitra Geospasial dari PT GS</h2>
+          <p>Geo Solution adalah bisnis geospasial yang menggabungkan produk fisik, produk digital, dan jasa pendukung. Kami membantu desa wisata, kampus, instansi, dan pengelola kawasan membuat lokasinya mudah ditemukan dan dipahami.</p>
+          <p>Mulai dari papan informasi ber-QR Code sampai Web GIS, semuanya dikerjakan berdasarkan data lapangan yang akurat.</p>
+        </div>
+        <div class="about-points">
+          <div class="point reveal"><i class="fa-solid fa-cube"></i><div><h4>Produk fisik</h4><p>Papan, peta cetak, dan poster peta.</p></div></div>
+          <div class="point reveal"><i class="fa-solid fa-display"></i><div><h4>Produk digital</h4><p>Peta interaktif dan dashboard spasial.</p></div></div>
+          <div class="point reveal"><i class="fa-solid fa-screwdriver-wrench"></i><div><h4>Jasa pendukung</h4><p>Pemetaan, analisis, Web GIS, dan pemeliharaan data.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 SEKTOR (kartu dibuat otomatis oleh main.js) -->
+    <section class="section section-dark" id="sektor">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Sektor Layanan</span>
+          <h2>Pilih Sektor yang Anda Butuhkan</h2>
+          <p>Klik salah satu sektor untuk melihat produk dan jasanya.</p>
+        </div>
+        <div class="sektor-grid" id="sektorGrid"></div>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section class="section" id="keunggulan">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Keunggulan</span>
+          <h2>Kenapa Memilih Geo Solution</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-item reveal"><i class="fa-solid fa-bullseye"></i><h4>Akurat</h4><p>Data dikumpulkan langsung di lapangan.</p></div>
+          <div class="why-item reveal"><i class="fa-solid fa-mobile-screen"></i><h4>Mudah diakses</h4><p>Cukup scan QR Code dari ponsel.</p></div>
+          <div class="why-item reveal"><i class="fa-solid fa-rotate"></i><h4>Selalu terbarui</h4><p>Informasi diperbarui lewat layanan GeoCare.</p></div>
+          <div class="why-item reveal"><i class="fa-solid fa-sliders"></i><h4>Sesuai kebutuhan</h4><p>Desain dan isi peta kami sesuaikan dengan Anda.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALUR PEMESANAN -->
+    <section class="section section-soft" id="alur">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Alur Pemesanan</span>
+          <h2>Empat Langkah Mudah</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><span>1</span><h4>Pilih sektor</h4><p>Tentukan sektor yang sesuai kebutuhan.</p></li>
+          <li class="reveal"><span>2</span><h4>Pilih produk</h4><p>Lihat detail dan harga mulai dari.</p></li>
+          <li class="reveal"><span>3</span><h4>Isi form order</h4><p>Lengkapi data dan kebutuhan Anda.</p></li>
+          <li class="reveal"><span>4</span><h4>Kami hubungi</h4><p>Tim kami menghubungi untuk konfirmasi.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container reveal">
+        <h2>Siap membuat lokasi Anda mudah ditemukan?</h2>
+        <p>Pilih sektor dan mulai pesanan Anda sekarang.</p>
+        <a href="#sektor" class="btn btn-gold">Mulai Pesan</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer & tombol WhatsApp dibuat otomatis oleh main.js -->
+  <div id="footer-slot"></div>
+
+  <!-- URUTAN PENTING: config -> produk -> main -->
+  <script src="data/config.js"></script>
+  <script src="data/produk.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

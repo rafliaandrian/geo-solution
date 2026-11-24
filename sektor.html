@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sektor Layanan | Geo Solution</title>
+  <meta name="description" content="Daftar produk dan jasa Geo Solution per sektor.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sektor.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+  <div id="navbar-slot"></div>
+
+  <main>
+    <!-- HEADER SEKTOR (diisi otomatis oleh sektor.js) -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <a href="index.html#sektor">Sektor</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span id="crumbNama">...</span>
+        </nav>
+        <div class="page-hero-body">
+          <div class="page-hero-icon"><i id="heroIkon" class="fa-solid fa-layer-group"></i></div>
+          <div>
+            <h1 id="heroNama">Memuat sektor...</h1>
+            <p id="heroDeskripsi"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILIHAN SEKTOR (pindah sektor tanpa kembali ke beranda) -->
+    <section class="switcher">
+      <div class="container">
+        <div class="switcher-row" id="switcher"></div>
+      </div>
+    </section>
+
+    <!-- DAFTAR PRODUK -->
+    <section class="section produk-section">
+      <div class="container">
+        <div class="produk-head">
+          <h2 id="produkJudul">Produk &amp; Jasa</h2>
+          <p>Pilih satu produk untuk lanjut ke formulir pemesanan.</p>
+        </div>
+        <div class="produk-grid" id="produkGrid"></div>
+
+        <div class="back-row">
+          <a href="index.html#sektor" class="btn btn-navy"><i class="fa-solid fa-arrow-left"></i> Kembali ke semua sektor</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+
+  <!-- URUTAN PENTING: config -> produk -> main -> sektor -->
+  <script src="data/config.js"></script>
+  <script src="data/produk.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sektor.js"></script>
+</body>
+</html>

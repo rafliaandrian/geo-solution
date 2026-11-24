@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pesanan Diterima | Geo Solution</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/order.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+  <div id="navbar-slot"></div>
+
+  <main>
+    <section class="order-hero">
+      <div class="container">
+        <h1>Pesanan Diterima</h1>
+        <ol class="progress">
+          <li class="done"><span><i class="fa-solid fa-check"></i></span> Pilih sektor</li>
+          <li class="done"><span><i class="fa-solid fa-check"></i></span> Pilih produk</li>
+          <li class="done"><span><i class="fa-solid fa-check"></i></span> Isi form</li>
+          <li class="active"><span><i class="fa-solid fa-check"></i></span> Selesai</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section order-section">
+      <div class="container">
+
+        <!-- kalau halaman dibuka tanpa pesanan -->
+        <div class="notfound" id="kosong" hidden>
+          <i class="fa-solid fa-inbox"></i>
+          <h2>Belum ada pesanan</h2>
+          <p>Halaman ini muncul setelah Anda mengirim form pemesanan. Pilih produk dulu untuk memulai.</p>
+          <a href="index.html#sektor" class="btn btn-gold">Pilih sektor</a>
+        </div>
+
+        <!-- diisi oleh sukses.js -->
+        <div class="success-card" id="sukses" hidden></div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+
+  <!-- URUTAN PENTING: config -> produk -> main -> sukses -->
+  <script src="data/config.js"></script>
+  <script src="data/produk.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sukses.js"></script>
+</body>
+</html>

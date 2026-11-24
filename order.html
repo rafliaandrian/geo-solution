@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Pemesanan | Geo Solution</title>
+  <meta name="description" content="Isi form pemesanan produk dan jasa Geo Solution.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/order.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+  <div id="navbar-slot"></div>
+
+  <main>
+    <!-- HEADER + INDIKATOR LANGKAH -->
+    <section class="order-hero">
+      <div class="container">
+        <h1>Form Pemesanan</h1>
+        <ol class="progress">
+          <li class="done"><span><i class="fa-solid fa-check"></i></span> Pilih sektor</li>
+          <li class="done"><span><i class="fa-solid fa-check"></i></span> Pilih produk</li>
+          <li class="active"><span>3</span> Isi form</li>
+          <li><span>4</span> Selesai</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section order-section">
+      <div class="container">
+
+        <!-- kalau ?p= salah / kosong -->
+        <div class="notfound" id="notFound" hidden>
+          <i class="fa-solid fa-circle-question"></i>
+          <h2>Produk belum dipilih</h2>
+          <p>Pilih produk terlebih dahulu dari salah satu sektor, lalu lanjut ke form pemesanan.</p>
+          <a href="index.html#sektor" class="btn btn-gold">Pilih sektor</a>
+        </div>
+
+        <div class="order-wrap" id="orderWrap" hidden>
+
+          <!-- RINGKASAN PRODUK (diisi order.js) -->
+          <aside class="summary" id="summary"></aside>
+
+          <!-- FORM -->
+          <form class="order-form" id="orderForm" novalidate>
+            <h2>Data pemesan</h2>
+            <p class="form-note">Kolom bertanda <b>*</b> wajib diisi.</p>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="nama">Nama lengkap *</label>
+                <input type="text" id="nama" autocomplete="name" placeholder="Nama Anda">
+                <small class="err" data-for="nama"></small>
+              </div>
+              <div class="field">
+                <label for="wa">Nomor WhatsApp *</label>
+                <input type="tel" id="wa" autocomplete="tel" inputmode="tel" placeholder="08xxxxxxxxxx">
+                <small class="err" data-for="wa"></small>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" autocomplete="email" placeholder="nama@email.com">
+                <small class="err" data-for="email"></small>
+              </div>
+              <div class="field">
+                <label for="instansi">Instansi / desa / usaha</label>
+                <input type="text" id="instansi" autocomplete="organization" placeholder="Contoh: Desa Wisata Kaliurang">
+              </div>
+            </div>
+
+                        <div class="field">
+              <label for="lokasi">Lokasi pemasangan atau lokasi proyek *</label>
+              <input type="text" id="lokasi" placeholder="Kecamatan, kabupaten / kota">
+              <small class="err" data-for="lokasi"></small>
+            </div>
+
+            <!-- KOLOM KHUSUS PRODUK (diisi order.js) -->
+            <div class="extra" id="extraWrap" hidden>
+              <h3 class="extra-title"><i class="fa-solid fa-sliders"></i> Detail <span id="extraNama">pesanan</span></h3>
+              <div id="extraFields"></div>
+            </div>
+
+            <div class="field-row" id="rowJumlah">
+              <div class="field" id="jumlahField">
+                <label for="jumlah" id="jumlahLabel">Jumlah *</label>
+                <input type="number" id="jumlah" min="1" max="999" value="1" inputmode="numeric">
+                <small class="err" data-for="jumlah"></small>
+              </div>
+              <div class="field">
+                <label for="tanggal">Target tanggal selesai</label>
+                <input type="date" id="tanggal">
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="jumlah" id="jumlahLabel">Jumlah *</label>
+                <input type="number" id="jumlah" min="1" max="999" value="1" inputmode="numeric">
+                <small class="err" data-for="jumlah"></small>
+              </div>
+              <div class="field">
+                <label for="tanggal">Target tanggal selesai</label>
+                <input type="date" id="tanggal">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="catatan">Catatan kebutuhan</label>
+              <textarea id="catatan" rows="4" placeholder="Ukuran, jumlah titik lokasi, atau hal lain yang perlu kami ketahui"></textarea>
+            </div>
+
+            <!-- jebakan spam: manusia tidak melihat kolom ini -->
+            <div class="hp" aria-hidden="true">
+              <label>Jangan diisi <input type="text" id="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <p class="form-error" id="formError" role="alert"></p>
+
+            <button type="submit" class="btn btn-gold btn-block" id="submitBtn">
+              <span id="submitText">Kirim pesanan</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <p class="form-foot"><i class="fa-solid fa-lock"></i> Data Anda hanya dipakai untuk memproses pesanan ini.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+
+  <!-- EmailJS (hanya dipakai kalau kunci di config.js sudah diisi) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- URUTAN PENTING: config -> produk -> main -> order -->
+  <script src="data/config.js"></script>
+  <script src="data/produk.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/order.js"></script>
+</body>
+</html>
